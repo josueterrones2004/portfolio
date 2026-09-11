@@ -55,13 +55,15 @@ Only repositories tagged with the following GitHub topic are displayed:
 
 ```text
 portfolio
-´´´
+```
 
 This allows projects to be added or removed from the portfolio directly through GitHub without exposing private repositories or unrelated repositories.
 
 Project metadata such as the repository URL and deployment URL can be retrieved automatically while curated descriptions and technologies remain controlled locally.
 
-Project Structure
+## Project Structure
+
+```text
 portfolio/
 ├── public/
 │   ├── Josue-Terrones-CV.pdf
@@ -71,29 +73,9 @@ portfolio/
 │
 ├── src/
 │   ├── components/
-│   │   ├── BackToTop.jsx
-│   │   ├── CodeWindow.jsx
-│   │   ├── Container.jsx
-│   │   ├── IntroScreen.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── OverlayScrollbar.jsx
-│   │   └── ProjectCard.jsx
-│   │
 │   ├── data/
-│   │   └── portfolio.js
-│   │
 │   ├── sections/
-│   │   ├── About.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Skills.jsx
-│   │   └── Timeline.jsx
-│   │
 │   ├── services/
-│   │   └── github.js
-│   │
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
@@ -101,7 +83,7 @@ portfolio/
 ├── index.html
 ├── package.json
 └── vite.config.js
-Running Locally
+```
 
 Clone the repository:
 
