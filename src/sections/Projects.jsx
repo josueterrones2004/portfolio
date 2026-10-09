@@ -1,135 +1,11 @@
-import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 import Container from "../components/Container";
 import ProjectCard from "../components/ProjectCard";
 
-import {
-  projects as localProjects,
-} from "../data/portfolio";
-
-import {
-  getGithubProjects,
-} from "../services/github";
+import { projects } from "../data/portfolio";
 
 function Projects() {
-  const [projects, setProjects] =
-    useState([]);
-
-  const [loading, setLoading] =
-    useState(true);
-
-  /*
-   * =========================================================
-   * LOAD PROJECTS FROM GITHUB
-   * =========================================================
-   */
-
-  useEffect(() => {
-    let active = true;
-
-    async function loadProjects() {
-      try {
-        const githubProjects =
-          await getGithubProjects();
-
-        if (!active) {
-          return;
-        }
-
-        /*
-         * Keep curated information from portfolio.js
-         * when a GitHub repository matches one of
-         * our manually configured projects.
-         */
-        const mergedProjects =
-          githubProjects.map(
-            (githubProject) => {
-              const localProject =
-                localProjects.find(
-                  (project) =>
-                    project.githubUrl &&
-                    project.githubUrl !==
-                      "#" &&
-                    project.githubUrl
-                      .toLowerCase()
-                      .replace(/\/$/, "") ===
-                      githubProject.githubUrl
-                        .toLowerCase()
-                        .replace(
-                          /\/$/,
-                          "",
-                        ),
-                );
-
-              if (!localProject) {
-                return githubProject;
-              }
-
-              return {
-                ...githubProject,
-
-                title:
-                  localProject.title ||
-                  githubProject.title,
-
-                description:
-                  localProject.description ||
-                  githubProject.description,
-
-                technologies:
-                  localProject
-                    .technologies
-                    ?.length > 0
-                    ? localProject.technologies
-                    : githubProject.technologies,
-
-                demoUrl:
-                  localProject.demoUrl &&
-                  localProject.demoUrl !==
-                    "#"
-                    ? localProject.demoUrl
-                    : githubProject.demoUrl,
-
-                githubUrl:
-                  githubProject.githubUrl,
-              };
-            },
-          );
-
-        setProjects(
-          mergedProjects,
-        );
-      } catch (error) {
-        console.error(
-          "Could not load GitHub projects:",
-          error,
-        );
-
-        /*
-         * If GitHub is temporarily unavailable,
-         * show the local project information
-         * instead of leaving the section empty.
-         */
-        if (active) {
-          setProjects(
-            localProjects,
-          );
-        }
-      } finally {
-        if (active) {
-          setLoading(false);
-        }
-      }
-    }
-
-    void loadProjects();
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
   return (
     <section
       id="projects"
@@ -187,23 +63,21 @@ function Projects() {
 
           <div>
             <h2 className="max-w-[900px] text-4xl font-black leading-[1.02] tracking-[-0.055em] text-white sm:text-5xl lg:text-[4.4rem]">
-              Selected work and
+              Products I&apos;ve built
               <span className="block">
-                things I&apos;ve{" "}
+                from{" "}
                 <span className="text-[var(--cream)]">
-                  built.
+                  end to end.
                 </span>
               </span>
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-[#cec7d8] sm:text-lg">
-              Projects where
-              I&apos;ve worked across
-              frontend, backend,
-              databases and interface
-              design — turning ideas
-              into complete web
-              experiences.
+              Selected full-stack projects
+              that show how I work across
+              product design, frontend,
+              backend, databases, external
+              APIs and deployment.
             </p>
           </div>
         </motion.div>
@@ -232,59 +106,62 @@ function Projects() {
           <span className="h-px flex-1 bg-white/15" />
 
           <span className="font-mono text-xs font-bold text-[var(--lavender)]">
-            {loading
-              ? "--"
-              : String(
-                  projects.length,
-                ).padStart(
-                  2,
-                  "0",
-                )}{" "}
+            {String(
+              projects.length,
+            ).padStart(
+              2,
+              "0",
+            )}{" "}
             projects
           </span>
         </motion.div>
 
         {/* PROJECTS */}
-        {loading ? (
-          <div className="flex min-h-[260px] items-center justify-center">
-            <p className="font-mono text-sm font-bold text-white/35">
-              Loading projects
-              from GitHub...
-            </p>
-          </div>
-        ) : (
-          <div className="mt-8 space-y-8">
-            {projects.map(
-              (
-                project,
-                index,
-              ) => (
-                <ProjectCard
-                  key={
-                    project.id ??
-                    project.title
-                  }
-                  index={index}
-                  title={
-                    project.title
-                  }
-                  description={
-                    project.description
-                  }
-                  technologies={
-                    project.technologies
-                  }
-                  demoUrl={
-                    project.demoUrl
-                  }
-                  githubUrl={
-                    project.githubUrl
-                  }
-                />
-              ),
-            )}
-          </div>
-        )}
+        <div className="mt-10 space-y-8">
+          {projects.map(
+            (
+              project,
+              index,
+            ) => (
+              <ProjectCard
+                key={
+                  project.title
+                }
+                index={index}
+                title={
+                  project.title
+                }
+                badge={
+                  project.badge
+                }
+                status={
+                  project.status
+                }
+                description={
+                  project.description
+                }
+                highlights={
+                  project.highlights
+                }
+                technologies={
+                  project.technologies
+                }
+                demoUrl={
+                  project.demoUrl
+                }
+                githubUrl={
+                  project.githubUrl
+                }
+                image={
+                  project.image
+                }
+                imageAlt={
+                  project.imageAlt
+                }
+              />
+            ),
+          )}
+        </div>
       </Container>
     </section>
   );

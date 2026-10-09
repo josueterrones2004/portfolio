@@ -1,6 +1,6 @@
 export const profile = {
   name: "Josué Terrones",
-  role: "Full Stack Web Developer",
+  role: "Software Developer | Full Stack Web Development",
   location: "Tonalá, Jalisco, México",
   availability: "Available for opportunities",
 
@@ -32,18 +32,18 @@ export const profile = {
     "https://www.linkedin.com/in/josueterrones2004/",
 
   intro:
-    "I build modern, scalable and carefully crafted web applications with a focus on clean development and thoughtful user experiences.",
+    "I build and deploy modern web applications across frontend, backend, databases and external APIs, with a focus on practical products, maintainable code and polished user experiences.",
 };
 
 export const skills = [
   "React",
+  "Next.js",
   "JavaScript",
   "TypeScript",
   "HTML5",
   "CSS3",
   "Tailwind CSS",
   "Bootstrap",
-  "jQuery",
 
   "Laravel",
   "PHP",
@@ -53,7 +53,7 @@ export const skills = [
 
   "MySQL",
   "SQL Server",
-  "MongoDB",
+  "Supabase",
   "SQL",
 
   "C#",
@@ -64,13 +64,54 @@ export const skills = [
   "Postman",
   "VS Code",
   "Linux",
+  "Vercel",
+
+  "AI-Assisted Software Development",
 ];
 
 export const projects = [
   {
+    title: "MediaTracker",
+    badge: "Pre-Alpha",
+    status:
+      "Currently in pre-alpha. Some flows still have bugs, several features are still being refined, and there are pending improvements and content/admin tools planned for upcoming iterations.",
+    description:
+      "A full-stack media tracking platform for movies, TV series, books and games, featuring authentication, user profiles, personal libraries, reviews, activity tracking and external media API integrations.",
+    highlights: [
+      "Authentication, profiles and personal libraries",
+      "External media API integrations and dynamic artwork",
+      "Reviews, activity tracking and social features",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "REST APIs",
+      "Vercel",
+    ],
+    demoUrl:
+      "https://media-tracker-five-swart.vercel.app/",
+    githubUrl:
+      "https://github.com/josueterrones2004/media-tracker",
+    image:
+      "/projects/media-tracker-home.png",
+    imageAlt:
+      "MediaTracker home page preview",
+  },
+
+  {
     title: "DevBoard",
+    badge: "Live Demo",
+    status:
+      "A full-stack task and workspace application focused on productivity flows, dashboard visibility and project organization.",
     description:
       "A full-stack project and task management platform with secure authentication, project workspaces, Kanban workflows, task assignment, filtering and responsive dashboards.",
+    highlights: [
+      "Workspace dashboard and project overview",
+      "Kanban-style task organization and filtering",
+      "Responsive interface for project and task management",
+    ],
     technologies: [
       "React",
       "TypeScript",
@@ -79,25 +120,14 @@ export const projects = [
       "MongoDB",
       "Tailwind CSS",
     ],
-    demoUrl: "#",
+    demoUrl:
+      "https://devboard-five-lovat.vercel.app/",
     githubUrl:
       "https://github.com/josueterrones2004/devboard",
-  },
-
-  {
-    title: "Portfolio",
-    description:
-      "A personal developer portfolio built to present my experience, technical skills and selected full-stack projects through a responsive and animated interface.",
-    technologies: [
-      "React",
-      "JavaScript",
-      "Tailwind CSS",
-      "Motion",
-      "Vite",
-    ],
-    demoUrl: "#",
-    githubUrl:
-      "https://github.com/josueterrones2004/portfolio",
+    image:
+      "/projects/devboard-dashboard.png",
+    imageAlt:
+      "DevBoard dashboard preview",
   },
 ];
 
@@ -208,13 +238,13 @@ export const timeline = [
     organization:
       "Systems Engineering + Personal Development",
     description:
-      "Reached seven years of programming experience while continuing to strengthen my full-stack profile through Systems Engineering, modern web technologies and increasingly polished personal projects.",
+      "Continued strengthening my full-stack profile through modern web development, deployed personal products and AI-assisted software development workflows.",
     technologies: [
       "React",
-      "Node.js",
+      "Next.js",
       "TypeScript",
-      "Tailwind CSS",
-      "Python",
+      "Supabase",
+      "AI-Assisted Development",
     ],
   },
 ];
