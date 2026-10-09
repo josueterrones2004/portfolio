@@ -1,7 +1,5 @@
 import Navbar from "./components/Navbar";
 import BackToTop from "./components/BackToTop";
-import IntroScreen from "./components/IntroScreen";
-import OverlayScrollbar from "./components/OverlayScrollbar";
 
 import Hero from "./sections/Hero";
 import About from "./sections/About";
@@ -14,7 +12,6 @@ import Footer from "./sections/Footer";
 function App() {
   return (
     <>
-      <IntroScreen />
       <Navbar />
 
       <main>
@@ -28,7 +25,6 @@ function App() {
 
       <Footer />
       <BackToTop />
-      <OverlayScrollbar />
     </>
   );
 }
