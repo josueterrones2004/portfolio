@@ -47,8 +47,8 @@ html {
   scroll-behavior: smooth;
   overscroll-behavior-y: none;
   background: var(--bg-deep);
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.28) transparent;
 }
 
 body {
@@ -58,7 +58,6 @@ body {
   margin: 0;
   overflow-x: hidden;
   overscroll-behavior-y: none;
-
   color: var(--text);
 
   background:
@@ -89,47 +88,30 @@ body {
       #1b1731 65%,
       #100f20 100%
     );
-
-  background-attachment: fixed;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
 }
 
 body::before {
-  position: fixed;
-  inset: -12%;
+  position: absolute;
+  inset: 0;
   z-index: -2;
   pointer-events: none;
-
   content: "";
-
   background:
     radial-gradient(
       ellipse at 45% -10%,
-      rgba(255, 143, 185, 0.22),
+      rgba(255, 143, 185, 0.18),
       transparent 43%
     ),
     radial-gradient(
       ellipse at 85% 38%,
-      rgba(142, 124, 255, 0.14),
+      rgba(142, 124, 255, 0.12),
       transparent 37%
     ),
     radial-gradient(
       ellipse at 20% 92%,
-      rgba(185, 165, 255, 0.14),
+      rgba(185, 165, 255, 0.12),
       transparent 42%
     );
-
-  animation: ambient-light 14s ease-in-out infinite;
-  will-change: transform;
 }
 
 body::after {
@@ -137,33 +119,14 @@ body::after {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-
   content: "";
-
-  opacity: 0.035;
-
+  opacity: 0.025;
   background-image:
     radial-gradient(
       rgba(255, 255, 255, 0.8) 0.7px,
       transparent 0.7px
     );
-
   background-size: 19px 19px;
-}
-
-@keyframes ambient-light {
-  0%,
-  100% {
-    transform: translate3d(-3%, -2%, 0) scale(1);
-  }
-
-  35% {
-    transform: translate3d(3%, 1%, 0) scale(1.06);
-  }
-
-  70% {
-    transform: translate3d(-1%, 4%, 0) scale(1.035);
-  }
 }
 
 #root {
@@ -218,18 +181,34 @@ section {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 767px) {
   html {
     scroll-behavior: auto;
   }
 
-  body::before {
-    animation: none;
+  body::after {
+    display: none;
+  }
+
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .backdrop-blur-sm {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
   *,
   *::before,
   *::after {
     scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
