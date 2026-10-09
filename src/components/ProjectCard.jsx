@@ -166,6 +166,9 @@ function ProjectCard({
                   <img
                     src={image}
                     alt={imageAlt || `${title} preview`}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     className="w-full object-contain transition-transform duration-700 group-hover:scale-[1.01]"
                   />
                 ) : (
