@@ -3,6 +3,9 @@ import { motion } from "motion/react";
 import Container from "../components/Container";
 import { profile } from "../data/portfolio";
 
+const whatsappUrl =
+  "https://wa.me/523334541455?text=Hola%20Josu%C3%A9%2C%20quiero%20cotizar%20un%20proyecto%20web.";
+
 function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden bg-[#1d1424] py-16 sm:py-24 lg:py-32">
@@ -41,6 +44,17 @@ function Contact() {
             </div>
 
             <div className="mx-auto mt-6 grid max-w-[430px] gap-3 sm:mt-9 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center sm:gap-4 lg:mx-0 lg:justify-start">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full bg-[var(--mint)] px-6 py-3.5 text-sm font-black transition-all duration-300 hover:-translate-y-1 hover:bg-white sm:w-auto sm:px-7 sm:py-4"
+                style={{ color: "#17152b" }}
+              >
+                Escribirme por WhatsApp
+                <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">↗</span>
+              </a>
+
               <a
                 href={`mailto:${profile.email}?subject=Quiero%20cotizar%20un%20proyecto%20web`}
                 className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full bg-[var(--cream)] px-6 py-3.5 text-sm font-black transition-all duration-300 hover:-translate-y-1 hover:bg-white sm:w-auto sm:px-7 sm:py-4"
