@@ -93,7 +93,14 @@ function ProjectCard({
               </div>
               <div className="bg-[#0d0d18]">
                 {image ? (
-                  <img src={image} alt={imageAlt || `Vista previa de ${title}`} className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.01] sm:aspect-auto sm:object-contain" />
+                  <img
+                    src={image}
+                    alt={imageAlt || `Vista previa de ${title}`}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.01] sm:aspect-auto sm:object-contain"
+                  />
                 ) : (
                   <div className="flex aspect-[16/9] items-center justify-center">
                     <span className="font-mono text-xs uppercase tracking-[0.22em] text-white/20">Vista previa</span>
