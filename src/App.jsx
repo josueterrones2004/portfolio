@@ -8,8 +8,15 @@ import Timeline from "./sections/Timeline";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import NegociosLanding from "./pages/NegociosLanding";
 
 function App() {
+  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+
+  if (path === "/negocios") {
+    return <NegociosLanding />;
+  }
+
   return (
     <>
       <Navbar />
