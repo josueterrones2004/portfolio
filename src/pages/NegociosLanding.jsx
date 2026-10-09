@@ -162,7 +162,7 @@ function NegociosLanding() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-4xl">
+            <div className="relative mx-auto w-full max-w-4xl pb-12 sm:pb-16 lg:pb-0">
               <div className="absolute -inset-10 -z-10 rounded-[42px] bg-[var(--lavender)]/10 blur-3xl" />
 
               <div className="relative ml-auto w-full max-w-[840px]">
@@ -173,24 +173,66 @@ function NegociosLanding() {
                 />
               </div>
 
-              <div className="absolute -bottom-10 right-1 w-[24%] min-w-[118px] max-w-[180px] rotate-[2deg] sm:right-4">
-                <div className="overflow-hidden rounded-[28px] border-[5px] border-[#0a0a10] bg-[#0a0a10] shadow-[0_24px_60px_rgba(0,0,0,.55)]">
-                  <img
-                    src="/projects/devboard-dashboard.png"
-                    alt="Vista móvil de proyecto web"
-                    className="aspect-[9/16] w-full object-cover object-left-top"
-                    loading="eager"
-                    decoding="async"
-                  />
+              <div className="absolute -bottom-1 right-3 z-20 w-[24%] min-w-[120px] max-w-[172px] sm:-bottom-4 sm:right-6 lg:-bottom-10 lg:right-4">
+                <div className="relative overflow-hidden rounded-[30px] border-[6px] border-[#09090f] bg-[#09090f] shadow-[0_28px_70px_rgba(0,0,0,.55)]">
+                  <div className="absolute left-1/2 top-2 z-20 h-4 w-14 -translate-x-1/2 rounded-full bg-black/90 sm:h-5 sm:w-16" />
+                  <div className="relative aspect-[9/19.5] overflow-hidden rounded-[23px] bg-[#0e0d16]">
+                    <div className="absolute inset-0 flex flex-col bg-[#141225]">
+                      <div className="border-b border-white/10 px-3 pb-2 pt-8">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[8px] font-black text-[var(--lavender)] sm:text-[9px]">DevBoard</span>
+                          <span className="h-2.5 w-2.5 rounded-full bg-[var(--mint)]/70" />
+                        </div>
+                        <div className="mt-2 h-1.5 w-14 rounded-full bg-white/10" />
+                      </div>
+
+                      <div className="flex-1 space-y-2.5 p-3">
+                        <div className="rounded-xl border border-white/10 bg-[#1d1931] p-2.5">
+                          <p className="text-[7px] font-bold uppercase tracking-[0.12em] text-white/35">Resumen</p>
+                          <p className="mt-1 text-[10px] font-black text-white sm:text-[11px]">Panel de proyecto</p>
+                          <div className="mt-2 h-1.5 w-full rounded-full bg-white/8">
+                            <div className="h-full w-2/3 rounded-full bg-[var(--lavender)]" />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-2">
+                          <div className="rounded-lg border border-white/8 bg-[#1a172a] p-2">
+                            <div className="h-2 w-8 rounded-full bg-[var(--lavender)]/45" />
+                            <div className="mt-2 h-5 w-5 rounded-md bg-[var(--lavender)]/20" />
+                          </div>
+                          <div className="rounded-lg border border-white/8 bg-[#1a172a] p-2">
+                            <div className="h-2 w-7 rounded-full bg-[var(--mint)]/40" />
+                            <div className="mt-2 h-5 w-5 rounded-md bg-[var(--mint)]/15" />
+                          </div>
+                        </div>
+
+                        <div className="rounded-xl border border-white/10 bg-[#1d1931] p-2.5">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[8px] font-black text-white/80">Tareas recientes</span>
+                            <span className="rounded-full bg-[var(--lavender)]/15 px-1.5 py-0.5 text-[6px] font-bold text-[var(--lavender)]">3</span>
+                          </div>
+                          <div className="mt-2 space-y-1.5">
+                            {["Diseño responsive", "Contacto WhatsApp", "Publicación"].map((item, index) => (
+                              <div key={item} className="flex items-center gap-1.5">
+                                <span className={`h-2 w-2 rounded-full ${index === 2 ? "bg-white/15" : "bg-[var(--lavender)]/65"}`} />
+                                <span className="text-[7px] text-white/45">{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#09090f]/35 to-transparent" />
+                  </div>
                 </div>
               </div>
 
-              <div className="absolute -left-2 bottom-8 hidden max-w-[260px] rounded-2xl border border-white/10 bg-[#171624]/92 px-4 py-3 shadow-[0_18px_40px_rgba(0,0,0,.35)] md:block">
+              <div className="absolute left-0 top-6 hidden max-w-[240px] rounded-2xl border border-white/10 bg-[#171624]/90 px-4 py-3 shadow-[0_18px_40px_rgba(0,0,0,.35)] xl:block">
                 <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[var(--mint)]">
                   Pensada para celular
                 </p>
                 <p className="mt-1 text-sm leading-6 text-white/65">
-                  Se adapta bien a móvil, tablet y escritorio.
+                  Diseño responsive para móvil, tablet y escritorio.
                 </p>
               </div>
             </div>
