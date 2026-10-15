@@ -49,10 +49,9 @@ function Hero() {
         return;
       }
 
-      frameId =
-        requestAnimationFrame(
-          updateExplore,
-        );
+      frameId = requestAnimationFrame(
+        updateExplore,
+      );
     };
 
     updateExplore();
@@ -183,13 +182,14 @@ function Hero() {
 
               {/* DESCRIPTION */}
               <p className="mt-7 max-w-[710px] text-base leading-8 text-[#ddd8e8] sm:text-[17px]">
-                I work across React,
-                Next.js, Node.js, APIs and
-                databases, turning product
-                ideas into responsive
-                applications with real
-                authentication, data flows
-                and production deployments.
+                I work across React, Next.js,
+                Node.js, Python, APIs,
+                databases and cloud services,
+                turning product ideas into
+                responsive applications with
+                real authentication, data
+                flows, integrations and
+                production deployments.
               </p>
 
               {/* ACTIONS */}
