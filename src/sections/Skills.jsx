@@ -1,13 +1,14 @@
 import { motion } from "motion/react";
 
 import Container from "../components/Container";
+import { skills } from "../data/portfolio";
 
 const categories = [
   {
     number: "01",
     label: "Frontend",
     description:
-      "Interfaces, component systems, responsive layouts and interactive browser experiences.",
+      "Modern interfaces, responsive systems and interactive browser experiences.",
     technologies: [
       "React",
       "Next.js",
@@ -18,6 +19,7 @@ const categories = [
       "Tailwind CSS",
       "Bootstrap",
       "Canvas API",
+      "Web Audio API",
     ],
     accent: "var(--pink)",
     background: "#301927",
@@ -25,15 +27,16 @@ const categories = [
   },
   {
     number: "02",
-    label: "Backend & Python",
+    label: "Backend & Runtime",
     description:
-      "Application logic, APIs, asynchronous workflows and server-side development.",
+      "Application logic, APIs, server-side development and asynchronous workflows.",
     technologies: [
       "Node.js",
       "Express",
       "Laravel",
       "PHP",
       "Python",
+      "C#",
       "AsyncIO",
       "REST APIs",
     ],
@@ -43,14 +46,15 @@ const categories = [
   },
   {
     number: "03",
-    label: "Data & Cloud",
+    label: "Data & Services",
     description:
-      "Relational data, authentication, persistence and managed cloud services.",
+      "Relational and document data, persistence, authentication and managed services.",
     technologies: [
-      "Supabase",
       "MySQL",
       "SQL Server",
+      "Supabase",
       "SQLite",
+      "MongoDB",
       "SQL",
       "Azure AI Speech",
     ],
@@ -62,12 +66,14 @@ const categories = [
     number: "04",
     label: "Media & Integrations",
     description:
-      "Audio processing, streaming pipelines and external service integration.",
+      "Speech synthesis, low-latency audio pipelines and third-party service integration.",
     technologies: [
-      "FFmpeg",
+      "Edge TTS",
       "Speech Synthesis APIs",
+      "FFmpeg",
       "Audio Streaming",
-      "External API Integration",
+      "Real-Time Audio Processing",
+      "API Integration",
     ],
     accent: "#83d8ff",
     background: "#17273a",
@@ -77,7 +83,7 @@ const categories = [
     number: "05",
     label: "Tools & Deployment",
     description:
-      "Version control, development environments, testing and production deployment.",
+      "Version control, development environments and production deployment workflows.",
     technologies: [
       "Git",
       "GitHub",
@@ -93,12 +99,11 @@ const categories = [
   },
   {
     number: "06",
-    label: "Development Workflow",
+    label: "Product Engineering",
     description:
-      "How I move from idea to implementation, optimization, iteration and delivery.",
+      "The practices I use to take features from implementation through delivery and iteration.",
     technologies: [
       "Authentication",
-      "API Integration",
       "Responsive Design",
       "CRUD Applications",
       "Role-Based Access Control",
@@ -160,7 +165,7 @@ function Skills() {
             </h2>
 
             <p className="mt-6 max-w-3xl text-base leading-8 text-[#d4cbd9] sm:text-lg">
-              Technologies and workflows I use to build and ship products — from interfaces and APIs to data, cloud services, media processing, deployment and performance.
+              Technologies and workflows I use across full-stack web development, Python, data, cloud services, real-time media, deployment and performance.
             </p>
           </motion.div>
         </div>
@@ -174,9 +179,9 @@ function Skills() {
             delay: 0.08,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mt-16 flex flex-col gap-6 border-b border-[#584454] pb-8 sm:flex-row sm:items-end sm:justify-between"
+          className="mt-16 grid gap-4 border-b border-[#584454] pb-8 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto] lg:items-end lg:gap-5"
         >
-          <div>
+          <div className="sm:col-span-2 lg:col-span-1">
             <p className="text-xs font-black uppercase tracking-[0.3em] text-[var(--lavender)]">
               Stack Breakdown
             </p>
@@ -185,71 +190,96 @@ function Skills() {
             </h3>
           </div>
 
-          <span className="font-mono text-xs text-white/35">
-            {String(categories.length).padStart(2, "0")} focused areas
-          </span>
+          <SkillStat value={skills.length} label="Technologies & skills" />
+          <SkillStat value={categories.length} label="Focused areas" />
         </motion.div>
 
-        <div className="mt-8 space-y-5">
+        <div className="mt-8 grid gap-5 lg:grid-cols-2">
           {categories.map((category, index) => (
             <motion.article
               key={category.label}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
+              viewport={{ once: true, amount: 0.22 }}
               transition={{
                 duration: 0.55,
-                delay: index * 0.06,
+                delay: (index % 2) * 0.06,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="relative overflow-hidden rounded-[24px] border"
+              className="relative flex min-h-full flex-col overflow-hidden rounded-[26px] border p-7 sm:p-8 lg:p-9"
               style={{
                 backgroundColor: category.background,
                 borderColor: category.border,
               }}
             >
               <div
-                className="absolute bottom-0 left-0 top-0 w-[5px]"
+                className="absolute inset-x-0 top-0 h-[4px]"
                 style={{ backgroundColor: category.accent }}
               />
 
-              <div className="grid gap-7 p-7 sm:p-8 lg:grid-cols-[72px_0.58fr_0.9fr_1.7fr] lg:items-center lg:gap-8 lg:px-10 lg:py-9">
-                <span
-                  className="font-mono text-sm font-black"
-                  style={{ color: category.accent }}
-                >
-                  {category.number}
-                </span>
+              <div className="flex items-start justify-between gap-5">
+                <div>
+                  <p
+                    className="font-mono text-xs font-black uppercase tracking-[0.2em]"
+                    style={{ color: category.accent }}
+                  >
+                    Area {category.number}
+                  </p>
 
-                <h4 className="text-2xl font-black tracking-[-0.04em] text-white sm:text-3xl">
-                  {category.label}
-                </h4>
-
-                <p className="max-w-lg text-sm leading-7 text-[#d1c8d6] sm:text-base">
-                  {category.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2.5 lg:justify-end">
-                  {category.technologies.map((technology) => (
-                    <span
-                      key={technology}
-                      className="rounded-full border px-4 py-2 text-xs font-bold"
-                      style={{
-                        color: category.accent,
-                        borderColor: category.border,
-                        backgroundColor: "#151121",
-                      }}
-                    >
-                      {technology}
-                    </span>
-                  ))}
+                  <h4 className="mt-3 text-2xl font-black tracking-[-0.04em] text-white sm:text-3xl">
+                    {category.label}
+                  </h4>
                 </div>
+
+                <span
+                  className="flex h-11 min-w-11 items-center justify-center rounded-full border font-mono text-xs font-black"
+                  style={{
+                    color: category.accent,
+                    borderColor: category.border,
+                    backgroundColor: "#151121",
+                  }}
+                >
+                  {String(category.technologies.length).padStart(2, "0")}
+                </span>
+              </div>
+
+              <p className="mt-5 max-w-xl text-sm leading-7 text-[#d1c8d6] sm:text-base">
+                {category.description}
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-2.5">
+                {category.technologies.map((technology) => (
+                  <span
+                    key={technology}
+                    className="rounded-full border px-4 py-2 text-xs font-bold"
+                    style={{
+                      color: category.accent,
+                      borderColor: category.border,
+                      backgroundColor: "#151121",
+                    }}
+                  >
+                    {technology}
+                  </span>
+                ))}
               </div>
             </motion.article>
           ))}
         </div>
       </Container>
     </section>
+  );
+}
+
+function SkillStat({ value, label }) {
+  return (
+    <div className="rounded-[18px] border border-white/10 bg-[#151121] px-5 py-4 sm:min-w-[180px]">
+      <p className="text-2xl font-black tracking-[-0.045em] text-white">
+        {String(value).padStart(2, "0")}
+      </p>
+      <p className="mt-1 text-[10px] font-black uppercase tracking-[0.18em] text-white/40">
+        {label}
+      </p>
+    </div>
   );
 }
 
