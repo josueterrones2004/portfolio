@@ -7,7 +7,7 @@ const categories = [
     number: "01",
     label: "Frontend",
     description:
-      "Interfaces, component systems and responsive product experiences.",
+      "Interfaces, component systems, responsive layouts and interactive browser experiences.",
     technologies: [
       "React",
       "Next.js",
@@ -17,6 +17,7 @@ const categories = [
       "CSS3",
       "Tailwind CSS",
       "Bootstrap",
+      "Canvas API",
     ],
     accent: "var(--pink)",
     background: "#301927",
@@ -24,14 +25,16 @@ const categories = [
   },
   {
     number: "02",
-    label: "Backend",
+    label: "Backend & Python",
     description:
-      "Application logic, REST APIs and full-stack web development.",
+      "Application logic, APIs, asynchronous workflows and server-side development.",
     technologies: [
       "Node.js",
       "Express",
       "Laravel",
       "PHP",
+      "Python",
+      "AsyncIO",
       "REST APIs",
     ],
     accent: "var(--cream)",
@@ -40,14 +43,16 @@ const categories = [
   },
   {
     number: "03",
-    label: "Data & Services",
+    label: "Data & Cloud",
     description:
-      "Application data, authentication and backend services.",
+      "Relational data, authentication, persistence and managed cloud services.",
     technologies: [
       "Supabase",
       "MySQL",
       "SQL Server",
+      "SQLite",
       "SQL",
+      "Azure AI Speech",
     ],
     accent: "var(--mint)",
     background: "#182c2a",
@@ -55,9 +60,24 @@ const categories = [
   },
   {
     number: "04",
+    label: "Media & Integrations",
+    description:
+      "Audio processing, streaming pipelines and external service integration.",
+    technologies: [
+      "FFmpeg",
+      "Speech Synthesis APIs",
+      "Audio Streaming",
+      "External API Integration",
+    ],
+    accent: "#83d8ff",
+    background: "#17273a",
+    border: "#315d7b",
+  },
+  {
+    number: "05",
     label: "Tools & Deployment",
     description:
-      "Version control, development environments, API testing and deployment.",
+      "Version control, development environments, testing and production deployment.",
     technologies: [
       "Git",
       "GitHub",
@@ -65,21 +85,24 @@ const categories = [
       "Postman",
       "VS Code",
       "Vercel",
+      "GitHub Pages",
     ],
     accent: "var(--lavender)",
     background: "#211d3a",
     border: "#504887",
   },
   {
-    number: "05",
+    number: "06",
     label: "Development Workflow",
     description:
-      "How I move from idea to implementation, iteration and delivery.",
+      "How I move from idea to implementation, optimization, iteration and delivery.",
     technologies: [
       "Authentication",
       "API Integration",
       "Responsive Design",
       "CRUD Applications",
+      "Role-Based Access Control",
+      "Web Performance Optimization",
       "AI-Assisted Software Development",
     ],
     accent: "#ff9fc5",
@@ -95,34 +118,19 @@ function Skills() {
       className="relative overflow-hidden bg-[#1b1325] py-24 sm:py-28 lg:py-32"
     >
       <div className="absolute inset-x-0 top-0 h-[4px] bg-[var(--cream)] shadow-[0_0_24px_rgba(255,230,154,.35)]" />
-
       <div className="pointer-events-none absolute -left-52 top-[8%] h-[480px] w-[480px] rounded-full bg-[#432039] blur-[150px]" />
-
       <div className="pointer-events-none absolute -right-52 bottom-[5%] h-[520px] w-[520px] rounded-full bg-[#292557] blur-[160px]" />
 
       <Container className="relative max-w-[1580px]">
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-end lg:gap-24">
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -25,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.25,
-            }}
-            transition={{
-              duration: 0.65,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            initial={{ opacity: 0, x: -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="flex items-center gap-3">
               <span className="h-3 w-3 rounded-full bg-[var(--cream)] shadow-[0_0_14px_rgba(255,230,154,.65)]" />
-
               <p className="text-xs font-black uppercase tracking-[0.3em] text-[var(--cream)]">
                 Skills / Stack
               </p>
@@ -134,18 +142,9 @@ function Skills() {
           </motion.div>
 
           <motion.div
-            initial={{
-              opacity: 0,
-              x: 25,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.25,
-            }}
+            initial={{ opacity: 0, x: 25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
             transition={{
               duration: 0.65,
               delay: 0.08,
@@ -156,31 +155,20 @@ function Skills() {
               My current
               <span className="block">
                 development{" "}
-                <span className="text-[var(--pink)]">
-                  stack.
-                </span>
+                <span className="text-[var(--pink)]">stack.</span>
               </span>
             </h2>
 
             <p className="mt-6 max-w-3xl text-base leading-8 text-[#d4cbd9] sm:text-lg">
-              Technologies and workflows I use to build and ship full-stack products — from interface development and APIs to data, deployment and iteration.
+              Technologies and workflows I use to build and ship products — from interfaces and APIs to data, cloud services, media processing, deployment and performance.
             </p>
           </motion.div>
         </div>
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.3,
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{
             duration: 0.6,
             delay: 0.08,
@@ -192,14 +180,13 @@ function Skills() {
             <p className="text-xs font-black uppercase tracking-[0.3em] text-[var(--lavender)]">
               Stack Breakdown
             </p>
-
             <h3 className="mt-4 text-3xl font-black tracking-[-0.045em] text-white sm:text-4xl">
               Tools I use to build and ship products.
             </h3>
           </div>
 
           <span className="font-mono text-xs text-white/35">
-            05 focused areas
+            {String(categories.length).padStart(2, "0")} focused areas
           </span>
         </motion.div>
 
@@ -207,18 +194,9 @@ function Skills() {
           {categories.map((category, index) => (
             <motion.article
               key={category.label}
-              initial={{
-                opacity: 0,
-                y: 24,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.25,
-              }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
               transition={{
                 duration: 0.55,
                 delay: index * 0.06,
@@ -232,17 +210,13 @@ function Skills() {
             >
               <div
                 className="absolute bottom-0 left-0 top-0 w-[5px]"
-                style={{
-                  backgroundColor: category.accent,
-                }}
+                style={{ backgroundColor: category.accent }}
               />
 
-              <div className="grid gap-8 p-7 sm:p-8 lg:grid-cols-[80px_0.55fr_0.9fr_1.5fr] lg:items-center lg:px-10 lg:py-9">
+              <div className="grid gap-7 p-7 sm:p-8 lg:grid-cols-[72px_0.58fr_0.9fr_1.7fr] lg:items-center lg:gap-8 lg:px-10 lg:py-9">
                 <span
                   className="font-mono text-sm font-black"
-                  style={{
-                    color: category.accent,
-                  }}
+                  style={{ color: category.accent }}
                 >
                   {category.number}
                 </span>
