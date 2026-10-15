@@ -45,6 +45,7 @@ export const skills = [
   "Tailwind CSS",
   "Bootstrap",
   "Canvas API",
+  "Web Audio API",
 
   "Laravel",
   "PHP",
@@ -52,20 +53,22 @@ export const skills = [
   "Express",
   "REST APIs",
   "Python",
+  "C#",
   "AsyncIO",
 
   "MySQL",
   "SQL Server",
   "Supabase",
   "SQLite",
+  "MongoDB",
   "SQL",
 
   "Azure AI Speech",
+  "Edge TTS",
   "Speech Synthesis APIs",
   "FFmpeg",
   "Audio Streaming",
-
-  "C#",
+  "Real-Time Audio Processing",
 
   "Git",
   "GitHub",
@@ -140,7 +143,7 @@ export const projects = [
     githubUrl:
       "https://github.com/josueterrones2004/PenguSpeak",
     image:
-      "/projects/penguspeak-ascii.webp",
+      "/projects/penguspeak-ascii.svg",
     imageAlt:
       "PenguSpeak ASCII artwork preview",
   },
@@ -162,6 +165,7 @@ export const projects = [
       "CSS3",
       "JavaScript",
       "Canvas API",
+      "Web Audio API",
       "GitHub Pages",
     ],
     demoUrl:
@@ -319,7 +323,9 @@ export const timeline = [
       "TypeScript",
       "Supabase",
       "Python",
+      "SQLite",
       "Azure AI Speech",
+      "Audio Streaming",
       "Web Performance Optimization",
       "AI-Assisted Development",
     ],
