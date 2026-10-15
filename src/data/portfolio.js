@@ -32,7 +32,7 @@ export const profile = {
     "https://www.linkedin.com/in/josueterrones2004/",
 
   intro:
-    "I build and deploy modern web applications across frontend, backend, databases and external APIs, with a focus on practical products, maintainable code and polished user experiences.",
+    "I build and deploy modern web applications across frontend, backend, databases, cloud services and external APIs, with a focus on practical products, maintainable code, performance and polished user experiences.",
 };
 
 export const skills = [
@@ -44,20 +44,28 @@ export const skills = [
   "CSS3",
   "Tailwind CSS",
   "Bootstrap",
+  "Canvas API",
 
   "Laravel",
   "PHP",
   "Node.js",
   "Express",
   "REST APIs",
+  "Python",
+  "AsyncIO",
 
   "MySQL",
   "SQL Server",
   "Supabase",
+  "SQLite",
   "SQL",
 
+  "Azure AI Speech",
+  "Speech Synthesis APIs",
+  "FFmpeg",
+  "Audio Streaming",
+
   "C#",
-  "Python",
 
   "Git",
   "GitHub",
@@ -65,7 +73,14 @@ export const skills = [
   "VS Code",
   "Linux",
   "Vercel",
+  "GitHub Pages",
 
+  "Authentication",
+  "API Integration",
+  "Responsive Design",
+  "CRUD Applications",
+  "Role-Based Access Control",
+  "Web Performance Optimization",
   "AI-Assisted Software Development",
 ];
 
@@ -104,19 +119,19 @@ export const projects = [
     title: "PenguSpeak",
     badge: "v1.3.0",
     status:
-      "Stable Discord TTS bot with an automatic Edge TTS / Azure Speech fallback system, per-user preferences and active development around reliability and user experience.",
+      "Stable low-latency speech application with automatic provider fallback, per-user preferences and active development around reliability and user experience.",
     description:
-      "A low-latency Text-to-Speech bot for Discord that turns messages into voice, with 22 Spanish voices, personal aliases, contextual message reading, per-server queues and resilient voice sessions.",
+      "A real-time text-to-speech system with 22 Spanish voices, personal aliases, contextual message processing, independent playback queues and resilient audio sessions.",
     highlights: [
-      "Low-latency streaming TTS with per-server playback queues",
+      "Low-latency streaming audio with independent playback queues",
       "22 Spanish voices, personal aliases and interactive configuration",
-      "Context-aware reading for replies, mentions, emojis, stickers and attachments",
+      "Context-aware processing for replies, mentions, emojis, stickers and attachments",
     ],
     technologies: [
       "Python",
-      "discord.py",
+      "AsyncIO",
       "Edge TTS",
-      "Azure Speech",
+      "Azure AI Speech",
       "SQLite",
       "FFmpeg",
     ],
@@ -125,28 +140,28 @@ export const projects = [
     githubUrl:
       "https://github.com/josueterrones2004/PenguSpeak",
     image:
-      "/projects/penguspeak-home.webp",
+      "/projects/penguspeak-ascii.webp",
     imageAlt:
-      "PenguSpeak website hero preview",
+      "PenguSpeak ASCII artwork preview",
   },
 
   {
     title: "PenguSpeak Web",
     badge: "Live",
     status:
-      "Live project website for PenguSpeak, built as a visual product showcase with interactive storytelling, voice demos and a direct installation flow for Discord.",
+      "Live product website built as a visual showcase with interactive storytelling, voice demos and a direct product flow.",
     description:
-      "An interactive landing page for PenguSpeak that explains the product through animated visual storytelling, a Discord-style usage demo, voice previews and responsive motion-driven sections.",
+      "An interactive landing page that explains the product through animated visual storytelling, a message-to-voice demonstration, voice previews and responsive motion-driven sections.",
     highlights: [
       "Animated ASCII-penguin hero with aurora and landscape effects",
-      "Interactive Discord-style message-to-voice product demo",
+      "Interactive message-to-voice product demonstration",
       "Responsive voice library and polished scroll-driven presentation",
     ],
     technologies: [
       "HTML5",
       "CSS3",
       "JavaScript",
-      "Canvas",
+      "Canvas API",
       "GitHub Pages",
     ],
     demoUrl:
@@ -303,6 +318,9 @@ export const timeline = [
       "Next.js",
       "TypeScript",
       "Supabase",
+      "Python",
+      "Azure AI Speech",
+      "Web Performance Optimization",
       "AI-Assisted Development",
     ],
   },
