@@ -101,6 +101,65 @@ export const projects = [
   },
 
   {
+    title: "PenguSpeak",
+    badge: "v1.3.0",
+    status:
+      "Stable Discord TTS bot with an automatic Edge TTS / Azure Speech fallback system, per-user preferences and active development around reliability and user experience.",
+    description:
+      "A low-latency Text-to-Speech bot for Discord that turns messages into voice, with 22 Spanish voices, personal aliases, contextual message reading, per-server queues and resilient voice sessions.",
+    highlights: [
+      "Low-latency streaming TTS with per-server playback queues",
+      "22 Spanish voices, personal aliases and interactive configuration",
+      "Context-aware reading for replies, mentions, emojis, stickers and attachments",
+    ],
+    technologies: [
+      "Python",
+      "discord.py",
+      "Edge TTS",
+      "Azure Speech",
+      "SQLite",
+      "FFmpeg",
+    ],
+    demoUrl:
+      "https://josueterrones2004.github.io/PenguSpeak-Web/",
+    githubUrl:
+      "https://github.com/josueterrones2004/PenguSpeak",
+    image:
+      "/projects/penguspeak-home.webp",
+    imageAlt:
+      "PenguSpeak website hero preview",
+  },
+
+  {
+    title: "PenguSpeak Web",
+    badge: "Live",
+    status:
+      "Live project website for PenguSpeak, built as a visual product showcase with interactive storytelling, voice demos and a direct installation flow for Discord.",
+    description:
+      "An interactive landing page for PenguSpeak that explains the product through animated visual storytelling, a Discord-style usage demo, voice previews and responsive motion-driven sections.",
+    highlights: [
+      "Animated ASCII-penguin hero with aurora and landscape effects",
+      "Interactive Discord-style message-to-voice product demo",
+      "Responsive voice library and polished scroll-driven presentation",
+    ],
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Canvas",
+      "GitHub Pages",
+    ],
+    demoUrl:
+      "https://josueterrones2004.github.io/PenguSpeak-Web/",
+    githubUrl:
+      "https://github.com/josueterrones2004/PenguSpeak-Web",
+    image:
+      "/projects/penguspeak-home.webp",
+    imageAlt:
+      "PenguSpeak website home page preview",
+  },
+
+  {
     title: "DevBoard",
     badge: "Live Demo",
     status:
