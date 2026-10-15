@@ -113,22 +113,22 @@ function About() {
 
             <p className="mt-7 max-w-3xl text-base leading-8 text-[#ddd6e7] sm:text-lg sm:leading-9">
               My work spans frontend interfaces, backend logic, databases,
-              authentication and external APIs. I&apos;m especially interested in
-              roles where I can keep learning while contributing to real product
-              development from day one.
+              authentication, external APIs, asynchronous processing and cloud
+              services. I&apos;m especially interested in roles where I can keep
+              learning while contributing to real product development from day one.
             </p>
 
             <p className="mt-4 max-w-3xl text-base leading-8 text-[#c9c0d4] sm:text-lg">
-              My current projects include a deployed media tracking platform
-              built with Next.js, TypeScript and Supabase, plus a full-stack task
-              management application built around React and Node.js.
+              My current work combines modern web development with Python,
+              relational data, API integrations, performance optimization and
+              media-processing workflows across deployed projects.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
               <Tag color="pink" text={profile.location} />
               <Tag color="lavender" text="Systems Engineering" />
               <Tag color="cream" text="Full Stack Development" />
-              <Tag color="mint" text="AI-Assisted Development" />
+              <Tag color="mint" text="Python + Cloud Integrations" />
             </div>
 
             <div className="mt-8 border-t border-[#55445f] pt-7">
